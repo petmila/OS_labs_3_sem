@@ -29,7 +29,7 @@ then
     do
         if [ ! -d "$HOME/source/$file" ]
         then
-            cp "$HOME/source/$file" "$backup"
+            cp -a "$HOME/source/$file" "$backup"
             echo "$file" >> $report
         fi
     done
@@ -51,11 +51,11 @@ else
                 if [ "$file_size" != "$last_file_size" ]
                 then
                     mv "$backup/$file" "$backup/$file.$backup_date"
-                    cp "$HOME/source/$file" "$backup"
+                    cp -a "$HOME/source/$file" "$backup"
                     echo "$file $file.$backup_date" >> temp
                 fi
             else
-                cp "$HOME/source/$file" "$backup"
+                cp -a "$HOME/source/$file" "$backup"
                 echo "$file" >> $report
             fi
         fi

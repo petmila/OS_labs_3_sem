@@ -27,5 +27,5 @@ then
     echo "There is a duplicate file, this file was deleted"
     rm "$restore/$file"
 fi
-    cp "$backup/$file" "$restore/$file"
+    cp -a "$backup/$file" "$restore/$file"
 done
